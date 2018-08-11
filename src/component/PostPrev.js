@@ -3,7 +3,7 @@ const PostPrev = ({ postTitle, postSubtitle, writer }) => {
     return (
         <div>
             <div className="post-preview">
-                <a href="post.html">
+                <a href="/">
                     <h2 className="post-title">
                         {postTitle}
                     </h2>
