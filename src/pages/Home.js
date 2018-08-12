@@ -6,13 +6,13 @@ import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 //6개정도만 보여줄것
-const Home = ({firebase,PostHead}) => {
+const Home = ({ PostHead }) => {
     const renderPostHead = !isLoaded(PostHead)
         ? 'Loading'
         : isEmpty(PostHead)
             ? 'Blog is empty'
             : PostHead.map(
-                ({postTitle,postSubtitle,writer,id}) => (
+                ({ postTitle, postSubtitle, writer, id }) => (
                     <PostPrev postTitle={postTitle} postSubtitle={postSubtitle} writer={writer} key={id} />
                 )
             )
