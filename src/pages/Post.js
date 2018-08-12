@@ -4,6 +4,7 @@ import { firebaseConnect, isLoaded, isEmpty, getVal } from 'react-redux-firebase
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { DiscussionEmbed } from 'disqus-react';
+import ReactLoading from 'react-loading';
 //포스트 예시 나중에 바꿀것
 const disqusConfig = {
     url: "https://azxca1731.github.io/#/post",
@@ -12,7 +13,7 @@ const disqusConfig = {
 };
 const Post = ({ post, PostHead }) => {
     const renderPost = !isLoaded(post)
-        ? 'Loading'
+        ? <ReactLoading className="mx-auto" type="spin" color="#A9A9A9" height={'20%'} width={'20%'}/>
         : isEmpty(post)
             ? 'Blog is empty'
             : post.map(

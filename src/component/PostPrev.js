@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 const PostPrev = ({ PostHead }) => {
     return (
         <div>
             <div className="post-preview">
-                <a href="/">
+                <Link to={"/post/"+PostHead.id}>
                     <h2 className="post-title">
                         {PostHead.postTitle}
                     </h2>
                     <h3 className="post-subtitle">
                         {PostHead.postSubtitle}
                     </h3>
-                </a>
+                </Link>
                 <p className="post-meta">Posted by
                     <a href="/"> {PostHead.writer} </a>
                     on September 24, 2018</p>
