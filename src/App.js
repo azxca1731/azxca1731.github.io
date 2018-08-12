@@ -1,10 +1,10 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavigationBar from './template/NavigationBar';
 import Footer from './template/Footer';
 import { Home, About, Whoops404, Post } from './pages/index'
 const App = () =>
-    <HashRouter>
+    <BrowserRouter>
         <div>
             <NavigationBar />
             <Switch>
@@ -16,5 +16,5 @@ const App = () =>
             </Switch>
             <Footer />
         </div>
-    </HashRouter>
+    </BrowserRouter>
 export default App;

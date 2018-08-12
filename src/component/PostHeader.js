@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 class PostHeader extends Component {
 
+    static defaultProps = {
+        PostHead: {
+            postTitle: "",
+            postSubtitle: "",
+            id: 1
+        }
+    };
+
     //나중에 여기에 사진을 넣어서 원하는 말을 쓸 수 있게
     render() {
         const { PostHead } = this.props;

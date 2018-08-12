@@ -13,7 +13,7 @@ const disqusConfig = {
 };
 const Post = ({ post, PostHead }) => {
     const renderPost = !isLoaded(post)
-        ? <ReactLoading className="mx-auto" type="spin" color="#A9A9A9" height={'20%'} width={'20%'}/>
+        ? <ReactLoading className="mx-auto" type="spin" color="#A9A9A9" height={'20%'} width={'20%'} />
         : isEmpty(post)
             ? 'Blog is empty'
             : post.map(
@@ -39,7 +39,6 @@ export default compose(
         // Set listeners based on props (prop is route parameter from react-router in this case)
         return [
             { path: `post/${1}` },
-            { path: `PostHead/${1}` }
         ]
     }),
     connect(({ firebase }) => ({
