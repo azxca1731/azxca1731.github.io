@@ -19,6 +19,7 @@ firebase.initializeApp(firebaseInit);
 
 const config = {
     userProfile: 'users',
+    enableLogging: false,
 };
 
 const createStoreWithFirebase = compose(
