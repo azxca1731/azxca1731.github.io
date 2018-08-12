@@ -5,15 +5,16 @@ import { firebaseStorage } from '../config';
 import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+import ReactLoading from 'react-loading';
 //6개정도만 보여줄것
 const Home = ({ PostHead }) => {
     const renderPostHead = !isLoaded(PostHead)
-        ? 'Loading'
+        ? <ReactLoading className="mx-auto" type="spin" color="#A9A9A9" height={'20%'} width={'20%'}/>
         : isEmpty(PostHead)
             ? 'Blog is empty'
             : PostHead.map(
-                ({ postTitle, postSubtitle, writer, id }) => (
-                    <PostPrev postTitle={postTitle} postSubtitle={postSubtitle} writer={writer} key={id} />
+                ( PostHead,i ) => (
+                    <PostPrev PostHead={PostHead} key={i} />
                 )
             )
 
