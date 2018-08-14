@@ -5,12 +5,13 @@ import { connect } from "react-redux";
 import { DiscussionEmbed } from "disqus-react";
 import ReactLoading from "react-loading";
 //포스트 예시 나중에 바꿀것
-const disqusConfig = {
-  url: "https://azxca1731.github.io/#/post",
-  identifier: "1",
-  title: "포스트 예시"
-};
-const Post = ({ post, PostHead }) => {
+
+const Post = ({ post, PostHead, match }) => {
+  const disqusConfig = {
+    url: `https://azxca1731.github.io/post/${match.params.id}`,
+    identifier: match.params.id,
+    title: "포스트 예시"
+  };
   const renderPost = !isLoaded(post) ? (
     <ReactLoading
       className="mx-auto"
@@ -20,7 +21,7 @@ const Post = ({ post, PostHead }) => {
       width={"20%"}
     />
   ) : isEmpty(post) ? (
-    "Blog is empty"
+    "아직 작성 되지 않은 포스트 입니다."
   ) : (
     post.map(({ id, value }) => <p key={id}>{value}</p>)
   );
@@ -38,7 +39,7 @@ const Post = ({ post, PostHead }) => {
     </div>
   );
 };
-export default connect(({ firebase }) => ({
-  post: getVal(firebase, `data/post/${1}`), // lodash's get can also be used
-  PostHead: getVal(firebase, `data/PostHead/${1}`)
+export default connect(({ firebase }, props) => ({
+  post: getVal(firebase, `data/post/${props.match.params.id}`), // lodash's get can also be used
+  PostHead: getVal(firebase, `data/PostHead/${props.match.params.id}`)
 }))(Post);
