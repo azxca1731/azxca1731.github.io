@@ -1,5 +1,6 @@
-1. 디비와 연결 - redux & firebase(Read - Done , WRite - Yet)
-2. 글쓰기 페이지 만들기
-3. 코드 스플리팅
-4. About me 제대로 만들기
-5. 카테고리 페이지 만들기
+1. 디비와 연결 - redux & firebase(Read - ALL Done , Write - Yet)
+2. 카테고리 페이지 만들기
+3. 존재하지 않는 페이지 예외처리 ( POST )
+3. 글쓰기 페이지 만들기
+4. 코드 스플리팅
+5. About me 제대로 만들기

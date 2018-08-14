@@ -4,13 +4,13 @@ import { isLoaded, isEmpty, getVal } from "react-redux-firebase";
 import { connect } from "react-redux";
 import { DiscussionEmbed } from "disqus-react";
 import ReactLoading from "react-loading";
-//포스트 예시 나중에 바꿀것
+//존재하지 않는 POST 예외 처리 해주어야함
 
 const Post = ({ post, PostHead, match }) => {
   const disqusConfig = {
     url: `https://azxca1731.github.io/post/${match.params.id}`,
     identifier: match.params.id,
-    title: "포스트 예시"
+    title: `nogada-samuso-${match.params.id}`
   };
   const renderPost = !isLoaded(post) ? (
     <ReactLoading
